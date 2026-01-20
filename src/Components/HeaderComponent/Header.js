@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { ArrowIcon1, ProfileIcon, DropDownIcon } from '../customIcons';
 import Lottie from "lottie-react";
 import NafLogoGif from '../../assets/header/naf-logo-json.json';
-import { useNavigation }  from '../../Preload/navigationProvider';
+import { useNavigation } from '../../Preload/navigationProvider';
 import { useTheme, useMediaQuery } from '@mui/material';
 
 const Header = () => {
@@ -251,7 +251,7 @@ const Header = () => {
               }}
               onClick={() => handleNavigation(`/${currentLang}`)}
             >
-               {t("Header.menuHome")}
+              {t("Header.menuHome")}
               <Box
                 sx={{
                   width: '5px',
@@ -320,7 +320,7 @@ const Header = () => {
                     setAnchorEl(null);
                   }}
                 >
-                   {t("Header.homeDropdown.about")}
+                  {t("Header.homeDropdown.about")}
                 </Box>
               </Box>
             )}
@@ -447,7 +447,7 @@ const Header = () => {
               {t("Header.menuSolutions")}
               {/* Solutions */}
 
-              <Box
+              < Box
                 sx={{
                   width: '5px',
                   height: '3px',
@@ -572,7 +572,7 @@ const Header = () => {
             }}
             onClick={() => handleNavigation(`/${currentLang}/support`)}
           >
-            {t("Header.Support")} 
+            {t("Header.Support")}
             {/* Support */}
           </Box>
 
@@ -683,7 +683,7 @@ const Header = () => {
               }}
             >
               {t("Header.login")}
-                {/* login */}
+              {/* login */}
 
               <Box
                 sx={{
@@ -775,7 +775,7 @@ const Header = () => {
               onClick={() => navigate(`/${currentLang}/contact`)}
             >
               {t("Header.BookaDemo")}
-                {/* Book a Demo */}
+              {/* Book a Demo */}
               <Box
                 sx={{
                   width: '5px',
@@ -854,6 +854,9 @@ const Header = () => {
           ref={menuTriggerRef}
           onClick={anchorEl ? handleMenuClose : handleMenuOpen}
         >
+
+         
+
           {anchorEl ? (
             <CloseIcon sx={{ fontSize: '20px' }} />
           ) : (
@@ -877,7 +880,12 @@ const Header = () => {
               className="menu-container show"
               ref={menuRef}
               onClick={(e) => e.stopPropagation()}
+
+
             >
+
+              <Box className="laptop_view ">
+
               <Box sx={{ position: 'absolute', top: 25, right: 25 }}>
                 <select
                   value={language}
@@ -907,9 +915,13 @@ const Header = () => {
                   ))}
                 </select>
               </Box>
+              </Box>
+
 
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, marginTop: '20px' }}>
                 {/* HOME HEADER */}
+              <Box className="laptop_view ">
+
                 <Box
                   className="menu-item bodyRegularText2"
                   sx={{
@@ -1176,7 +1188,7 @@ const Header = () => {
                   onMouseEnter={() => setHoveredPath('about')}
                   onMouseLeave={() => setHoveredPath(null)}
                 >
-                   {hoveredPath === 'about' && (
+                  {hoveredPath === 'about' && (
                     <span className="arrow-icon"><ArrowIcon1 /></span>
                   )}
                   {t("Header.CompanyAbout")}
@@ -1231,6 +1243,8 @@ const Header = () => {
                   )}
                   {t("Header.Support")}
                 </Box>
+              </Box>
+
 
                 {/* LOGIN DROPDOWN */}
                 <Box>
@@ -1245,10 +1259,8 @@ const Header = () => {
                       width: "24px",
                       height: '24px',
                       flexShrink: 0,
-                      color: {
-                        xs: '#000000', // ✅ mobile
-                        lg: '#FCFCFC', // desktop (safety)
-                      },
+                      color:  '#000000', // desktop (safety)
+                      
                     }}
                     onClick={() => {
                       handleNavigation(`/${currentLang}/login`);
@@ -1266,7 +1278,7 @@ const Header = () => {
                         toggleMobileDropdown('login');
                       }}
                     >
-                      <DropDownIcon color={isMobile ? '#1A1A1A' : '#FCFCFC'} />
+                      <DropDownIcon color={ '#1A1A1A'} />
                     </Box>
                   </Box>
 
@@ -1314,10 +1326,8 @@ const Header = () => {
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
-                      color: {
-                        xs: '#000000', // ✅ mobile
-                        lg: '#FCFCFC',
-                      }, cursor: 'pointer'
+                      color: '#000000', // ✅ mobile
+                        cursor: 'pointer'
                     }}
                     onClick={() => {
                       handleNavigation(`/${currentLang}/contact`);
@@ -1335,7 +1345,7 @@ const Header = () => {
                         toggleMobileDropdown('demo');
                       }}
                     >
-                      <DropDownIcon color={isMobile ? '#1A1A1A' : '#FCFCFC'} />
+                      <DropDownIcon color={ '#1A1A1A'}/>
                     </Box>
                   </Box>
 
@@ -1384,7 +1394,7 @@ const Header = () => {
             </Box>
           </>
         )}
-      </Box>
+      </Box >
     </>
   );
 };
