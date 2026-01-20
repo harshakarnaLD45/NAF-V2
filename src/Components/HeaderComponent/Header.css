@@ -212,6 +212,11 @@
     order: 2;
     margin-left: auto;
   }
+  .header-container {
+    padding: 15px 30px !important;
+    /* justify-content: space-between; */
+    /* padding-top: 30px !important; */
+  }
  
 }
 
@@ -285,7 +290,7 @@
 
 @media (max-width: 480px) {
   .header-container {
-    padding: 0px 10px;
+    padding: 7px 10px !important;
   }
 
   .main-logo {
