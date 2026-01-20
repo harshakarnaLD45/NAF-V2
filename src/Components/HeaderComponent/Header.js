@@ -1173,8 +1173,10 @@ const Header = () => {
                     handleNavigation(`/${currentLang}/company/about`);
                     setTimeout(() => setAnchorEl(null), 300);
                   }}
+                  onMouseEnter={() => setHoveredPath('about')}
+                  onMouseLeave={() => setHoveredPath(null)}
                 >
-                  {location.pathname.includes('/company/about') && (
+                   {hoveredPath === 'about' && (
                     <span className="arrow-icon"><ArrowIcon1 /></span>
                   )}
                   {t("Header.CompanyAbout")}
@@ -1184,8 +1186,12 @@ const Header = () => {
                   sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    // color: (location.pathname === `/${currentLang}/company/menu` || hoveredPath === `/${currentLang}/company/menu`) ? '#1A1A1A' : '#FCFCFC',
-                    color: (location.pathname === `/${currentLang}/company/menu` || hoveredPath === `/${currentLang}/company/menu`) ? '#1A1A1A' : '#FCFCFC',
+                    color: {
+                      xs: '#1A1A1A', // ✅ mobile always black
+                      lg: (location.pathname === `/${currentLang}/company/menu` || hoveredPath === 'liveMenu')
+                        ? '#1A1A1A'
+                        : '#FCFCFC', // ✅ desktop logic
+                    },
                     cursor: 'pointer',
                     '&:hover': { color: '#1A1A1A' }
                   }}
@@ -1193,31 +1199,37 @@ const Header = () => {
                     handleNavigation(`/${currentLang}/company/menu`);
                     setTimeout(() => setAnchorEl(null), 300);
                   }}
-                  onMouseEnter={() => setHoveredPath(`/${currentLang}/company/menu`)}
+                  onMouseEnter={() => setHoveredPath('liveMenu')}
                   onMouseLeave={() => setHoveredPath(null)}
                 >
-                  {(location.pathname === `/${currentLang}/company/menu` || hoveredPath === `/${currentLang}/company/menu`) && (
+                  {hoveredPath === 'liveMenu' && (
                     <span className="arrow-icon"><ArrowIcon1 /></span>
                   )}
                   {t("Header.LiveMenu")}
                 </Box>
 
                 <Box className="menu-item bodyRegularText2"
-
                   sx={{
+                    display: 'flex',
+                    alignItems: 'center',
                     color: {
-                      xs: '#000000', // ✅ mobile
-                      lg: '#FCFCFC',
+                      xs: '#1A1A1A', // ✅ mobile always black
+                      lg: hoveredPath === 'support' ? '#1A1A1A' : '#FCFCFC',
                     },
+                    cursor: 'pointer',
+                    '&:hover': { color: '#1A1A1A' }
                   }}
-
                   onClick={() => {
                     handleNavigation(`/${currentLang}/support`);
-                    setAnchorEl(null)
-                  }}>
-
+                    setAnchorEl(null);
+                  }}
+                  onMouseEnter={() => setHoveredPath('support')}
+                  onMouseLeave={() => setHoveredPath(null)}
+                >
+                  {hoveredPath === 'support' && (
+                    <span className="arrow-icon"><ArrowIcon1 /></span>
+                  )}
                   {t("Header.Support")}
-
                 </Box>
 
                 {/* LOGIN DROPDOWN */}
