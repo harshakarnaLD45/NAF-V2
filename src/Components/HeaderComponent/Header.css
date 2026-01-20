@@ -192,11 +192,15 @@
   display: block;
 }
 
+ .laptop_view{
+    display: none !important;
+   
+  }
+
+
+
 @media (max-width: 1266px) {
 
-  .desktop-nav {
-    display: none !important;
-  }
 
   .desktop-actions {
     display: none !important;
@@ -208,15 +212,24 @@
     order: 2;
     margin-left: auto;
   }
-
+ 
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1074px) {
   .header-container {
     padding: 0px 30px;
     justify-content: space-between;
   }
+.laptop_view{
+    display: flex !important;
+    flex-direction: column !important;
+     gap: 24px !important;
+  }
 
+  
+  .desktop-nav {
+    display: none !important;
+  }
   .main-logo {
     width: 80px;
     height: 80px;
