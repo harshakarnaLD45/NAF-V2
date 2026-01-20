@@ -161,10 +161,10 @@ const Footer = () => {
               mb: { xs: 6, md: 10 },
               px: { xs: 2, md: "2rem" },
               paddingTop: '0px',
-              gap: { xs: 4, md: 0 },
             }}
           >
-            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ md: "flex-start" }}>
+            <Stack className="webite-contact" spacing={{ xs: 2, md: 2 }} alignItems={{ md: "flex-start" }} sx={{
+                  width: { xs: "100%", md: "auto" },}}>
               <Typography
                 className="headings-h2 footerhead"
                 variant="h2"
@@ -177,6 +177,7 @@ const Footer = () => {
                   mb: 8,
                   display: "flex",
                   flexWrap: "wrap",
+                  gap: 1,
 
                   // overflow: "hidden", // Add this line to hide scrollbars
                   // alignItems: "center", // Optional: vertically center content
@@ -186,7 +187,7 @@ const Footer = () => {
                   {t('footer.Gotaproject')}
                 </Box>
 
-                <Box component="span" sx={{ mt: 0, pt: 0, ml: { sm: 2 }, whiteSpace: "wrap" }} className="headings-h2 xl-heading-text  ">
+                <Box component="span" sx={{ mt: 0, pt: 0,  whiteSpace: "wrap"}} className="headings-h2 xl-heading-text  ">
                   {t('footer.Gotaproject1')}
                 </Box>
                 {/* <Box component="span" sx={{ mt: 0, pt: 0, ml:{sm: 2} , whiteSpace: "wrap" }} className="headings-h2">
@@ -213,12 +214,12 @@ const Footer = () => {
                   {t('footer.Gotaproject2')}
                 </Box>
               </Typography>
-              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: { sm: "center" } }}>
+              <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: { sm: "center" } , pt: { xs: 6, md: 6,lg:6 },}}>
                 <AnimateButton text1={t('footer.footergetIn')} text2={t('footer.footertouch')} route={`/${lang}/contact`} />
               </Box>
 
               <Box className="social-icon-sec" sx={{
-                position: 'relative', pt: 5,
+                position: 'relative', pt: 5, pb: {xs:2 ,sx:0 },
                 display: 'flex', flexDirection: 'row', gap: 5, justifyContent: 'center', alignItems: 'center'
               }}>
                 {socialIcons.map((social, index) => (
