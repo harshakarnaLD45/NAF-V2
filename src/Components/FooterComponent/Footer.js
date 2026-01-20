@@ -142,7 +142,7 @@ const Footer = () => {
               bgcolor: "#F84311",
               borderRadius: "857.333px",
               position: "absolute",
-              top: "85%",
+              top: "95%",
               left: "50%",
               transform: "translate(-50%, -40%)",
               zIndex: 0,
