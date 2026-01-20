@@ -339,6 +339,12 @@ Large Screens (Desktops)
         bottom: -20px !important;
         font-size: clamp(28px, 7.5vw, 165px) !important;
     }
+     
+    .footer-policy-div {
+        flex-direction: column !important;
+        justify-content: space-between !important;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -476,3 +482,4 @@ Large Screens (Desktops)
 
     }
 }
+
