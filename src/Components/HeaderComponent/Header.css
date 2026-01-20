@@ -224,20 +224,7 @@
     top: 10px;
   }
 
-  .desktop-nav {
-    display: none !important;
-  }
 
-  .desktop-actions {
-    display: none !important;
-  }
-
-  .mobile-menu-btn {
-    display: flex !important;
-    margin-top: 10px;
-    order: 2;
-    margin-left: auto;
-  }
 
   .menu-container {
     width: 400px;
