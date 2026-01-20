@@ -10,6 +10,24 @@
   z-index: 1000;
 }
 
+@media (max-width: 1266px) {
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .desktop-actions {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    margin-top: 10px;
+    order: 2;
+    margin-left: auto;
+  }
+
+}
 @media (min-width: 1025px) {
   .header.blurred {
     backdrop-filter: blur(10px);
@@ -317,4 +335,5 @@
     gap: 15px;
     font-size: 14px;
   }
+
 }
